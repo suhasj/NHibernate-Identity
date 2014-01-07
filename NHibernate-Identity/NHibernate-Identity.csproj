@@ -186,18 +186,22 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ProjectDb.mdf" />
-    <Content Include="App_Data\ProjectDb_log.ldf">
-      <DependentUpon>ProjectDb.mdf</DependentUpon>
+    <Content Include="App_Data\NHibernateTestDb.mdf" />
+    <Content Include="App_Data\NHibernateTestDb_log.ldf">
+      <DependentUpon>NHibernateTestDb.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CreateTable.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <EmbeddedResource Include="Mappings\ApplicationUser.hbm.xml" />
     <Content Include="hibernate.cfg.xml" />
+    <Content Include="Mappings\IdentityRole.hbm.xml" />
+    <Content Include="Mappings\IdentityUserClaim.hbm.xml" />
+    <Content Include="Mappings\IdentityUserLogin.hbm.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EmbeddedResource Include="Mappings\Person.hbm.xml" />

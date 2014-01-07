@@ -2,10 +2,26 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    assembly="NHibernate_Identity"
                    namespace="NHibernate_Identity.Models">
-  <class name="ApplicationUser">
+  <class name="ApplicationUser" table="AspNetUsers">
     <id name="Id">
     </id>
-    <property name="Username"/>
+    <property name="UserName"/>
     <property name="PasswordHash"/>
+    <property name="Email"/>
+    <property name="SecurityStamp"/>
+    <property name="IsConfirmed" type="bool"/>
+    <bag name="Roles" table="AspNetUserRoles" fetch="join" inverse="true" cascade="all-delete-orphan">
+      <key column="UserId">
+      </key>
+      <many-to-many class="IdentityRole" column="RoleId"/>
+    </bag>
+    <bag name="Logins" table="AspNetUserLogins" fetch="join" cascade="all-delete-orphan">
+      <key column="UserId"/> 
+      <one-to-many class="IdentityUserLogin"/>
+    </bag>
+    <bag name="Claims" table="AspNetUserClaims" fetch="join" cascade="all-delete-orphan">
+      <key column="UserId"/>
+      <one-to-many class="IdentityUserClaim"/>
+    </bag>
   </class>
 </hibernate-mapping>

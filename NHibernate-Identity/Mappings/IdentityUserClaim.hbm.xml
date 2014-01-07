@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Microsoft.AspNet.Identity.EntityFramework"
+                   namespace="Microsoft.AspNet.Identity.EntityFramework">
+  <class name="IdentityUserClaim" table="AspNetUserClaims">
+    <id name="Id">
+      <generator class="increment"/>
+    </id>
+    <property name="ClaimType"/>
+    <property name="ClaimValue"/>
+    <property name="UserId"/>
+  </class>
+</hibernate-mapping>
