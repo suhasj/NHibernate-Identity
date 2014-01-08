@@ -185,7 +185,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <EmbeddedResource Include="Mappings\ApplicationUser.hbm.xml" />
+    <EmbeddedResource Include="Mappings\IdentityUser.hbm.xml" />
     <Content Include="hibernate.cfg.xml" />
     <Content Include="Mappings\IdentityRole.hbm.xml" />
     <Content Include="Mappings\IdentityUserClaim.hbm.xml" />
