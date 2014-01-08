@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using Samples.Identity;
 using NHibernate_Identity.Models;
+using System.Linq;
 
 namespace NHibernate_Identity.Controllers
 {
@@ -16,7 +17,7 @@ namespace NHibernate_Identity.Controllers
     public class AccountController : Controller
     {
         public AccountController()
-            : this(new UserManager<IdentityUser,int>(new NHibernateUserStore()))
+            : this(new UserManager<IdentityUser,int>(new NHibernateUserStore<IdentityUser>()))
         {
         }
 

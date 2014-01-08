@@ -1,15 +1,17 @@
 ﻿CREATE TABLE [dbo].[AspNetRoles] (
-    [Id] [nvarchar](128) NOT NULL,
+    [Id] [int] NOT NULL,
     [Name] [nvarchar](max) NOT NULL,
     CONSTRAINT [PK_dbo.AspNetRoles] PRIMARY KEY ([Id])
 )
 CREATE TABLE [dbo].[AspNetUserRoles] (
-    [UserId] [nvarchar](128) NOT NULL,
-    [RoleId] [nvarchar](128) NOT NULL,
+    [UserId] [int] NOT NULL,
+    [RoleId] [int] NOT NULL,
     CONSTRAINT [PK_dbo.AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId])
 )
+
 CREATE INDEX [IX_RoleId] ON [dbo].[AspNetUserRoles]([RoleId])
 CREATE INDEX [IX_UserId] ON [dbo].[AspNetUserRoles]([UserId])
+
 CREATE TABLE [dbo].[AspNetUsers] (
     [Id] [nvarchar](128) NOT NULL,
     [UserName] [nvarchar](max) NOT NULL,
@@ -21,7 +23,7 @@ CREATE TABLE [dbo].[AspNetUsers] (
 )
 CREATE TABLE [dbo].[AspNetUserClaims] (
     [Id] [int] NOT NULL IDENTITY,
-    [UserId] [nvarchar](128) NOT NULL,
+    [UserId] [int] NOT NULL,
     [ClaimType] [nvarchar](max),
     [ClaimValue] [nvarchar](max),
     CONSTRAINT [PK_dbo.AspNetUserClaims] PRIMARY KEY ([Id])

@@ -11,18 +11,18 @@
     <property name="Email"/>
     <!--<property name="SecurityStamp"/>-->
     <property name="IsConfirmed" type="bool"/>
-    <!--bag name="Roles" table="AspNetUserRoles" fetch="join" inverse="true" cascade="all-delete-orphan">
+    <bag name="Roles" table="AspNetUserRoles" fetch="join" inverse="true" cascade="all-delete-orphan" lazy="false">
       <key column="UserId">
       </key>
-      <many-to-many class="IdentityRole" column="RoleId"/>
+      <many-to-many class="IdentityRole" column="RoleId" outer-join="auto"/>
     </bag>
-    <bag name="Logins" table="AspNetUserLogins" fetch="join" cascade="all-delete-orphan">
+   <!-- <bag name="Logins" table="AspNetUserLogins" fetch="join" cascade="all-delete-orphan">
       <key column="UserId"/> 
       <one-to-many class="IdentityUserLogin"/>
-    </bag>
-    <bag name="Claims" table="AspNetUserClaims" fetch="join" cascade="all-delete-orphan">
+    </bag> -->
+    <set name="Claims" table="AspNetUserClaims" fetch="join" cascade="all-delete-orphan" lazy="false">
       <key column="UserId"/>
       <one-to-many class="IdentityUserClaim"/>
-    </bag>-->
+    </set>
   </class>
 </hibernate-mapping>

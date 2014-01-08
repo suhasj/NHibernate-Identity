@@ -15,8 +15,8 @@ namespace Samples.Identity
             var configurationPath = HttpContext.Current.Server.MapPath(@"~\hibernate.cfg.xml");
             configuration.Configure(configurationPath);
             configuration.AddFile(HttpContext.Current.Server.MapPath(@"~\Mappings\IdentityUser.hbm.xml"));
-            //configuration.AddFile(HttpContext.Current.Server.MapPath(@"~\Mappings\IdentityRole.hbm.xml"));
-            //configuration.AddFile(HttpContext.Current.Server.MapPath(@"~\Mappings\IdentityUserClaim.hbm.xml"));
+            configuration.AddFile(HttpContext.Current.Server.MapPath(@"~\Mappings\IdentityRole.hbm.xml"));
+            configuration.AddFile(HttpContext.Current.Server.MapPath(@"~\Mappings\IdentityUserClaim.hbm.xml"));
             //configuration.AddFile(HttpContext.Current.Server.MapPath(@"~\Mappings\IdentityUserLogin.hbm.xml"));
             ISessionFactory sessionFactory = configuration.BuildSessionFactory();
             return sessionFactory.OpenSession();

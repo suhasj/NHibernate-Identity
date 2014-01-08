@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
-                   assembly="Microsoft.AspNet.Identity.EntityFramework"
-                   namespace="Microsoft.AspNet.Identity.EntityFramework">
+                   assembly="Samples.Identity"
+                   namespace="Samples.Identity">
   <class name="IdentityRole" table="AspNetRoles">
     <id name="Id">
     </id>
     <property name="Name"/>
-    <bag name="Users" table="AspNetUserRoles" fetch="join" inverse="true" cascade="all-delete-orphan">
+    <bag name="Users" table="AspNetUserRoles" fetch="join" inverse="true" cascade="all-delete-orphan" lazy="false">
       <key column="RoleId">
       </key>
-      <many-to-many class="ApplicationUser" column="UserId"/>
+      <many-to-many class="IdentityUser" column="UserId"/>
     </bag>
   </class>
 </hibernate-mapping>
