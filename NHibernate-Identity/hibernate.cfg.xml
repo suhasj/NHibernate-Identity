@@ -8,7 +8,7 @@
       NHibernate.Driver.SqlClientDriver
     </property>
     <property name="connection.connection_string">
-      Data Source=np:\\.\pipe\localdb#d9e292c9\tsql\query;AttachDbFilename="d:\Users\sujosh\Documents\Visual Studio 2013\Projects\NHibernate-Identity\NHibernate-Identity\App_Data\ProjectDb.mdf";Integrated Security=True;
+      Data Source=np:\\.\pipe\localdb#d9e292c9\tsql\query;AttachDbFilename="d:\Users\sujosh\Documents\Visual Studio 2013\Projects\NHibernate-Identity\NHibernate-Identity\App_Data\NHibernateTestDb.mdf";Integrated Security=True;
     </property>
     <property name="dialect">
       NHibernate.Dialect.MsSql2012Dialect

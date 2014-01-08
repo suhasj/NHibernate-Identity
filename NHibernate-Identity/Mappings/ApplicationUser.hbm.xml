@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
-                   assembly="NHibernate_Identity"
-                   namespace="NHibernate_Identity.Models">
-  <class name="ApplicationUser" table="AspNetUsers">
+                   assembly="Samples.Identity"
+                   namespace="Samples.Identity">
+  <class name="IdentityUser" table="AspNetUsers">
     <id name="Id">
+      <generator class="increment"/>
     </id>
     <property name="UserName"/>
     <property name="PasswordHash"/>
     <property name="Email"/>
-    <property name="SecurityStamp"/>
+    <!--<property name="SecurityStamp"/>-->
     <property name="IsConfirmed" type="bool"/>
-    <bag name="Roles" table="AspNetUserRoles" fetch="join" inverse="true" cascade="all-delete-orphan">
+    <!--bag name="Roles" table="AspNetUserRoles" fetch="join" inverse="true" cascade="all-delete-orphan">
       <key column="UserId">
       </key>
       <many-to-many class="IdentityRole" column="RoleId"/>
@@ -22,6 +23,6 @@
     <bag name="Claims" table="AspNetUserClaims" fetch="join" cascade="all-delete-orphan">
       <key column="UserId"/>
       <one-to-many class="IdentityUserClaim"/>
-    </bag>
+    </bag>-->
   </class>
 </hibernate-mapping>

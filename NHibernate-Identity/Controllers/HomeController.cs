@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using System.Net.Mime;
+using NHibernate;
 using NHibernate_Identity.Models;
 using System;
 using System.Collections.Generic;
@@ -13,15 +14,6 @@ namespace NHibernate_Identity.Controllers
         public ActionResult Index()
         {
 
-            var person = new Person() { FirstName = "foo", LastName = "bar" };
-            using (var session = NHibernateSession.OpenSession())
-            {
-                using (ITransaction transaction = session.BeginTransaction())
-                {
-                    session.Save(person);
-                    transaction.Commit();
-                }
-            }
             return View();
 
         }

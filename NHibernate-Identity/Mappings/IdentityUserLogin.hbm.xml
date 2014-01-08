@@ -3,10 +3,10 @@
                    assembly="Microsoft.AspNet.Identity.EntityFramework"
                    namespace="Microsoft.AspNet.Identity.EntityFramework">
   <class name="IdentityUserLogin" table="AspNetUserLogins">
-    <composite-id>
-      <key-property name="LoginProvider" />
-      <key-property name="ProviderKey" />
-      <key-property name="UserId" />
-    </composite-id>
+    <id name="UserId">
+      <generator class="native"/>
+    </id>
+    <property name="LoginProvider"></property>
+    <property name="ProviderKey"></property>
   </class>
 </hibernate-mapping>
